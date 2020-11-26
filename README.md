@@ -1,2 +1,5 @@
 # Assignment-6-ZXA180005
-# This is my readme file for assignment 6
+# Name: Zainab Anwar
+# Net ID: ZXA180005
+# Email: ZXA180005@utdallas.edu
+# Github URL: 
