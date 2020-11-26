@@ -1,5 +1,5 @@
 #include "header.h"
-
+//BinaryFileHeader in a separate source file but still being used in Main
 class BinaryFileHeader
 {
 public:

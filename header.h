@@ -33,6 +33,7 @@ class BinaryFileHeader
   uint64_t numRecords;
 };
 */
+//function headers
 class BinaryFileHeader;
 
 const int maxRecordStringLength = 25;

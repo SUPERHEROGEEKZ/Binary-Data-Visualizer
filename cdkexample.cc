@@ -29,13 +29,14 @@
 #define MATRIX_NAME_STRING "Binary File Contents"
 
 using namespace std;
-
+//main method
 int main()
 {
+  
   BinaryFileHeader *header = new BinaryFileHeader();
-
+  //read in from binary file
   ifstream binInFile("/scratch/perkins/cs3377.bin", ios::in | ios::binary);
-
+  //open binary file
   if(!binInFile.is_open())
     {
       cerr << "ERROR: Could not open file!" << endl;
@@ -43,29 +44,30 @@ int main()
     }
 
   binInFile.read((char *)header, sizeof(BinaryFileHeader));
-  
+  //read in hex numbers
   stringstream magic;
   magic << hex << uppercase << header->magicNumber;
   string magicToStr = magic.str();
   string magicToStr2 = "0x" + magicToStr;
   string magicToStr3 = "Magic: " + magicToStr2;
-  
+  //read in version number
   stringstream version;
   version << header->versionNumber;
   string versionToStr = version.str();
   string versionToStr2 = "Version: " + versionToStr;
-
+  //read in # of records
   stringstream record;
   record << header->numRecords;
   string recordToStr = record.str();
   string recordToStr2 = "NumRecords: " + recordToStr;
-  
+  //for loop for all the records
   int recordsNum = header->numRecords; 
   BinaryFileRecord record1[recordsNum]; 
   for (int i = 0; i < recordsNum; i++)
     {
       binInFile.read((char*) &record1[i],sizeof(BinaryFileRecord)); 
     }
+  //string length increases index by 1 so that it reads the next length
   int buflen00 = strlen(record1[0].stringBuffer);
   string buflen02 = to_string(buflen00);
   string buflen03 = "strlen: " + buflen02;
