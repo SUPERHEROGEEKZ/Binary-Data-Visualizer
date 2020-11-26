@@ -13,7 +13,7 @@ CXX = g++
 CPPFLAGS = -I /scratch/perkins/include -std=c++11
 
 # compiler flags                                                                                                                                      
-CXXFLAGS = -Wall
+CXXFLAGS = -Wall -Werror -Wno-write-strings
 
 # linker flags                                                                                                                                        
 LDFLAGS = -L /scratch/perkins/lib
